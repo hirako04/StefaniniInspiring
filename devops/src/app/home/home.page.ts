@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LoadingControlle } from '@ionic/angular';
+import { LoadingController } from '@ionic/angular';
 import * as _ from 'lodash';
 
 @Component({
@@ -20,13 +20,13 @@ export class HomePage {
   ngOnInit() {
     this.printOnConsole();
     this.presentLoading();
-
+    this.dismissLoading();
 
     this.randomPhotos();
 
     setTimeout( () => {
       try {
-        dismissLoading();
+        this.dismissLoading();
       } catch(err) {
         console.error(err);
         alert('Error dismissing loader');
@@ -36,10 +36,10 @@ export class HomePage {
     
   }
 
-  randomPhotos() {
+  async randomPhotos() {
     let i = 0;
     while (i < 501) {
-      let salt = Math.floor((Math.random() * 300) + 1);
+      let salt = await Math.floor((Math.random() * 300) + 1);
       this.photos.push(`https://picsum.photos/200/200?image=${salt}`)
       i = i + 1;
     }
@@ -57,7 +57,7 @@ export class HomePage {
     console.log('Running a public function on init');
   }
 
-  dismissLoading() {
+  aysnc dismissLoading() {
     if (!_.isNil(this.loading)) {
       this.loading.dismiss();
     }
