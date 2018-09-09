@@ -3,27 +3,30 @@
 ## Javascript Questão 2:
 
 ### a) No import da api do google maps no index.html, para que servem as tags async e defer?
-R: 
+R: A tag async é usada para indicar o navegador que o script pode ser executado assincronamente, a tag defer informa o navegador para executar o script apenas quando a análise do HTML estiver finalizada.
 
 ### b) Para que serve o parâmetro &callback=initMap na url da api do google maps?
-R: 
+R: O parâmetro callback serve para chamar a função initMap, após a importação da api do google maps.
 
 ### c) O que acontece quando removemos o parâmetro &callback=initMap da url da api do google maps? Explique o porque.
-R: 
+R: Se removermos o parâmetro &callback o mapa não irá aparecer pois a função initMap responsável por iniciar o mapa não foi chamado.
 
 ### d) Descreva pelo menos uma forma de como podemos fazer com que a aplicação funcione corretamente mesmo sem este parâmetro.
 R: 
 
 ### e) Explique para que servem as seguintes tags do index.html: 
-  `<link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">`
+  a `<link rel="manifest" href="manifest.json">
+  b <meta name="theme-color" content="">
+  c <meta name="apple-mobile-web-app-capable" content="yes">
+  d <meta name="apple-mobile-web-app-status-bar-style" content="black">`
 
-R:
+R:  a) O arquivo manifest.json importado serve para controlar o aplicativo ou site é exibido (necessário para PWA)
+    b) É usado para trocar a cor do toolbar quando se passa um parametro, exemplo: <meta name="theme-color" content="#db5945">
+    c) Define que o site ou app é capaz de oferecer toda a experiência sem a necessidade da interface do usuário do Google Chrome, incluindo navegação de retorno e encaminhamento.
+    d) É usado para mudar a barra de status de um aplicativo web progressivo em iOS para preto.
 
 ### f) Está aplicação pode ser considerada um PWA? Em caso negativo, explique o que falta para que seja.
-R:
+R: Acredito que não seja um PWA pois não possui atualizações por service worker.
 
 
 ## Angular Questão 4:
