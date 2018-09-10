@@ -12,12 +12,8 @@ R: O parâmetro callback serve para chamar a função initMap, após a importaç
 R: Se removermos o parâmetro &callback o mapa não irá aparecer pois a função initMap responsável por iniciar o mapa não foi chamado.
 
 ### d) Descreva pelo menos uma forma de como podemos fazer com que a aplicação funcione corretamente mesmo sem este parâmetro.
-R: Podemos chamar o parâmetro callback=initialize e inicializar a função 
-  <script>
-    function initialize() {
-        initMap();
-    }
-  </script>
+R: Podemos remover o async defer da chamada da API e fazer um evento pelo js através do código 
+google.maps.event.addDomListener(window,'load', initMap);
 
 ### e) Explique para que servem as seguintes tags do index.html: 
   a `<link rel="manifest" href="manifest.json">
