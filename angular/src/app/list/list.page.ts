@@ -6,6 +6,7 @@ import { legends } from '../names/nameslist.ts';
   templateUrl: 'list.page.html',
   styleUrls: ['list.page.scss']
 })
+
 export class ListPage {
   legends: Array<string> = [];
 
