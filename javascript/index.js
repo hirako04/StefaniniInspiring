@@ -2,6 +2,7 @@ console.log('Yet another Hello world');
 
 var map = null;
 
+// array com os locais
 placesOfInterest = [
     { name: 'Charme da paulista', lat: -23.562172, lng: -46.655794 },
     { name: 'The Blue Pub', lat: -23.563112, lng: -46.650338 },
@@ -17,10 +18,12 @@ placesOfInterest = [
     { name: 'Rei das Batidas', lat: -23.570613, lng: -46.705977 }
 ];
 
+// função para trocar a cor
 function changeColor(evt) {
   this.setIcon(changeCustomIcon);
 }
 
+// const para trocar a cor
 const changeCustomIcon = {
     path: 'M0-48c-9.8 0-17.7 7.8-17.7 17.4 0 15.5 17.7 30.6 17.7 30.6s17.7-15.4 17.7-30.6c0-9.6-7.9-17.4-17.7-17.4z',
     fillColor: '#FFF',
@@ -39,6 +42,7 @@ const customIcon = {
     strokeWeight: 3
 };
 
+// função adicionar markers
 function addMarker(marker) {
     var marker = new google.maps.Marker({
         map: map,
@@ -48,14 +52,16 @@ function addMarker(marker) {
     });
     
     var infowindow = new google.maps.InfoWindow();
-
     marker.addListener('click', changeColor);        
     marker.addListener('click', function() {
-              infowindow.setContent('<div><strong>' + marker.title + '</strong></div>');
-              infowindow.open(map, this);
-            });
-}
+        
+          //adicionar titulo
+          infowindow.setContent('<div><strong>' + marker.title + '</strong></div>');
+          infowindow.open(map, this);
+    });
+}   
 
+// função iniciar mapa
 function initMap() {
     var mapOptions = {
         center: new google.maps.LatLng(-23.562172, -46.655794),
@@ -76,12 +82,10 @@ function initMap() {
 
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
-    //Adicionando o primeiro marcador como exemplo
+    // adicionando o primeiro marcador como exemplo
     placesOfInterest.forEach(function(element) {
             addMarker(element);
-    });
-    
-    
+    });    
 }
 
-    google.maps.event.addDomListener(window,'load', initMap);
+google.maps.event.addDomListener(window,'load', initMap);

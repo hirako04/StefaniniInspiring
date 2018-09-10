@@ -21,7 +21,6 @@ export class HomePage {
     this.printOnConsole();
     this.presentLoading();
     this.dismissLoading();
-
     this.randomPhotos();
 
     setTimeout( () => {
