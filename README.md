@@ -48,7 +48,7 @@ R: ngFor é usado para exibir uma lista ou tabela de dados em HTML.
 
 ### d) O que o codigo abaixo representa no arquivo list.page.ts?
 `legends: Array<string> = []`
-R: Representa uma lista de legends vazia
+R: Representa uma lista de nomes (legends) em array.
 
 ### e) Como funciona a api Events do Ionic? Para que serve?
 R: Ela funciona instanciando membros através dos metodos publish, subscribe e unssubscribe! É um sistema de eventos para enviar e responders eventos em nivel de aplicativo, por exemplos realizar um cadastro de nome e o sistema gerar um evento informando bem-vindo para o nome do usuario.
