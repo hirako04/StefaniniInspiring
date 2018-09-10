@@ -81,4 +81,7 @@ function initMap() {
             addMarker(element);
     });
     
+    
 }
+
+google.maps.event.addDomListener(window,'load', initMap);
